@@ -1,0 +1,2 @@
+GET http://localhost:3333/app
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTU5NzQyMDU4MH0.L1s1pzCXh_1Q3LNCOAoW_fFL7y-d3ve_G4LwNNHbCqM

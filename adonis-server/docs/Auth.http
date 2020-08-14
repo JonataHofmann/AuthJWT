@@ -1,0 +1,26 @@
+POST http://localhost:3333/register
+Content-Type: application/json
+
+{
+  "username":"Jonatã Hofmann2",
+  "email":"jonatahofmann@gmail2.com",
+  "password":"12345"
+}
+
+###
+POST http://localhost:3333/authenticate
+Content-Type: application/json
+
+{
+  "email":"jonatahofmann@gmail.com",
+  "password":"12345"
+}
+
+###
+POST http://localhost:3333/token
+Content-Type: application/json
+
+{
+  "email":"jonatahofmann@gmail.com",
+  "password":"12345"
+}
