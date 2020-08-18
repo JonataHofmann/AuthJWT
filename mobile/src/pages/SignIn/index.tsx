@@ -44,7 +44,6 @@ const SignIn: React.FC = () => {
     return (
         <Container>
             <Title>Sign In JWT </Title>
-            {/* <ContainerInput> */}
             <Icon name="rocket-outline" size={100} color="#FFF" />
 
             {messages &&

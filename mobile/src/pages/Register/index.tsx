@@ -16,6 +16,7 @@ import {
 } from './styles';
 import PageHeader from '../../components/PageHeader';
 import {register} from '../../services/auth';
+import {StatusBar} from 'react-native';
 
 interface Error {
     field: string;
@@ -40,42 +41,47 @@ const Register: React.FC = () => {
             });
     }
     return (
-        <Container>
-            <PageHeader title="Registrar-se" backLink="SignIn" />
+        <>
+            <StatusBar barStyle="light-content" backgroundColor="#8257e5" />
+            <Container>
+                <PageHeader title="Registrar-se" backLink="SignIn" />
 
-            <Form>
-                {messages &&
-                    messages.map((item: any) => {
-                        return (
-                            <Message key={item.field}>{item.message}</Message>
-                        );
-                    })}
+                <Form>
+                    {messages &&
+                        messages.map((item: any) => {
+                            return (
+                                <Message key={item.field}>
+                                    {item.message}
+                                </Message>
+                            );
+                        })}
 
-                <Input
-                    value={username}
-                    onChangeText={(text) => setUserName(text)}
-                    placeholder="UserName"
-                />
-                <Input
-                    value={email}
-                    onChangeText={(text) => setEmail(text)}
-                    placeholder="Email"
-                />
-                <Input
-                    value={password}
-                    secureTextEntry
-                    onChangeText={(text) => setPassword(text)}
-                    placeholder="Senha"
-                />
+                    <Input
+                        value={username}
+                        onChangeText={(text) => setUserName(text)}
+                        placeholder="UserName"
+                    />
+                    <Input
+                        value={email}
+                        onChangeText={(text) => setEmail(text)}
+                        placeholder="Email"
+                    />
+                    <Input
+                        value={password}
+                        secureTextEntry
+                        onChangeText={(text) => setPassword(text)}
+                        placeholder="Senha"
+                    />
 
-                <SubmitButton onPress={handleRegister}>
-                    <SubmitButtonText>Registrar Usuário</SubmitButtonText>
-                </SubmitButton>
-                <RegisterButton onPress={() => goBack()}>
-                    <RegisterText>Tem uma conta? Logar-se!</RegisterText>
-                </RegisterButton>
-            </Form>
-        </Container>
+                    <SubmitButton onPress={handleRegister}>
+                        <SubmitButtonText>Registrar Usuário</SubmitButtonText>
+                    </SubmitButton>
+                    <RegisterButton onPress={() => goBack()}>
+                        <RegisterText>Tem uma conta? Logar-se!</RegisterText>
+                    </RegisterButton>
+                </Form>
+            </Container>
+        </>
     );
 };
 

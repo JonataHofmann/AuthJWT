@@ -55,10 +55,11 @@ export const AuthProvider: React.FC = ({children}) => {
                 JSON.stringify(response.data.user),
             );
             await AsyncStorage.setItem('@RNAuth:token', response.data.token);
+            setLoading(false);
         } catch (err) {
+            setLoading(false);
             throw err;
         }
-        setLoading(false);
     }
 
     function signOut() {
