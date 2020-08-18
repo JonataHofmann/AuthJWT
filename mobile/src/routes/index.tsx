@@ -9,9 +9,9 @@ import {View, Text} from 'react-native';
 const Routes: React.FC = () => {
     const {signed, loading} = useAuth();
 
-    if (loading) {
-        return <Loading />;
-    }
+    // if (loading) {
+    //     return <Loading />;
+    // }
 
     return signed ? <AppRoutes /> : <AuthRoutes />;
 };

@@ -8,7 +8,8 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3333/authenticate
+POST http://192.168.0.14:3333/authenticate
+Accept: application/json
 Content-Type: application/json
 
 {
@@ -17,8 +18,14 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3333/token
+GET http://192.168.0.14:3333/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTU5NzQyMDU4MH0.L1s1pzCXh_1Q3LNCOAoW_fFL7y-d3ve_G4LwNNHbCqM
+
+
+###
+POST http://192.168.0.14:3333/token
 Content-Type: application/json
+Accept: application/json
 
 {
   "email":"jonatahofmann@gmail.com",

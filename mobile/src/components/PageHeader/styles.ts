@@ -1,0 +1,26 @@
+import styled from 'styled-components/native';
+
+export const Container = styled.View`
+    padding: 10px 20px;
+    background-color: #8257e5;
+`;
+
+export const TopBar = styled.View`
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: ; */
+`;
+export const Header = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30px;
+`;
+
+export const Title = styled.Text`
+    color: #fff;
+    font-size: 24px;
+    line-height: 32px;
+    max-width: 160px;
+    margin: 10px 0px;
+`;

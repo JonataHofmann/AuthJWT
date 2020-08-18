@@ -14,10 +14,17 @@ class AuthController {
 
   async authenticate({request, auth}){
     const {email, password} = request.all();
+    console.log(email, password)
+    const authToken = await auth.attempt(email,password);
+    const user = await User.findBy('email', email);
+    const token = authToken.token;
+    return {token, user};
+  }
 
-    const token = await auth.attempt(email,password);
-
-    return token;
+  async me({request, auth}){
+    const user = auth.getUser();
+    delete user.password;
+    return user;
   }
 
 }
