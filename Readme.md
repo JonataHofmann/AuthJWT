@@ -2,7 +2,7 @@
 
 
 ## Backend
-Estudos com o vídeo [niciando com AdonisJS, um framework completo para NodeJS](https://www.youtube.com/watch?v=aysgHRmzG3w)
+Estudos com o vídeo [Iniciando com AdonisJS, um framework completo para NodeJS](https://www.youtube.com/watch?v=aysgHRmzG3w)
 
 Aprendizado:
 - Framework Adonis JS
