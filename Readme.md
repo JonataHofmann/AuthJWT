@@ -20,5 +20,5 @@ Aprendizado:
 <div>
    <img src="./.github/Login.png" width="180">
    <img src="./.github/Register.png" width="180">
-   <img src="./.github/Dashboar.png" width="180">
+   <img src="./.github/Dashboard.png" width="180">
 </div>
