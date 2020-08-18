@@ -1,9 +1,10 @@
-POST http://localhost:3333/register
+POST http://192.168.0.14:3333/register
+Accept: application/json
 Content-Type: application/json
 
 {
-  "username":"Jonatã Hofmann2",
-  "email":"jonatahofmann@gmail2.com",
+  "username":"Jonatã Hofmann",
+  "email":"jonatahofmann@gmail.com",
   "password":"12345"
 }
 

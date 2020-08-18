@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {useAuth} from '../../contexts/auth';
-import Icon from 'react-native-vector-icons/Ionicons';
+
+import {useNavigation} from '@react-navigation/native';
 
 import {
     Container,
@@ -15,16 +15,30 @@ import {
     ForgotPasswordText,
 } from './styles';
 import PageHeader from '../../components/PageHeader';
+import {register} from '../../services/auth';
 
-interface Errors {}
+interface Error {
+    field: string;
+    message: string;
+}
 
 const Register: React.FC = () => {
-    const [userName, setUserName] = useState('');
+    const [username, setUserName] = useState('');
     const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-    const [messages, setMessages] = useState([]);
+    const [password, setPassword] = useState('');
+    const [messages, setMessages] = useState<Array<Error>>([]);
+    const {goBack} = useNavigation();
 
-    function handleRegister() {}
+    function handleRegister() {
+        register({username, email, password})
+            .then((response) => {
+                goBack();
+            })
+            .catch((err) => {
+                console.log(JSON.stringify(err));
+                setMessages([{field: '', message: 'Um erro aconteceu!'}]);
+            });
+    }
     return (
         <Container>
             <PageHeader title="Registrar-se" backLink="SignIn" />
@@ -38,22 +52,26 @@ const Register: React.FC = () => {
                     })}
 
                 <Input
+                    value={username}
                     onChangeText={(text) => setUserName(text)}
                     placeholder="UserName"
                 />
                 <Input
+                    value={email}
                     onChangeText={(text) => setEmail(text)}
                     placeholder="Email"
                 />
                 <Input
-                    onChangeText={(text) => setSenha(text)}
+                    value={password}
+                    secureTextEntry
+                    onChangeText={(text) => setPassword(text)}
                     placeholder="Senha"
                 />
 
                 <SubmitButton onPress={handleRegister}>
                     <SubmitButtonText>Registrar Usuário</SubmitButtonText>
                 </SubmitButton>
-                <RegisterButton>
+                <RegisterButton onPress={() => goBack()}>
                     <RegisterText>Tem uma conta? Logar-se!</RegisterText>
                 </RegisterButton>
             </Form>

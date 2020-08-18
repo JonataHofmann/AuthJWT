@@ -24,7 +24,7 @@ const SignIn: React.FC = () => {
     const [messages, setMessages] = useState([]);
     const {signed, signIn} = useAuth();
 
-    const {navigate} = useNavigation();
+    const {navigate } = useNavigation();
 
     function handleNavigateToRegister() {
         navigate('Register');
